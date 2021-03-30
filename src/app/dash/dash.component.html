@@ -1,0 +1,48 @@
+<!--dash.component.html-->
+<div class="grid-container">
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Dashboard">
+
+  
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
+
+    <mat-grid-tile *ngFor="let i of [1]" [colspan]= "1" [rowspan]= "2" [routerLink] = "['/accounts']">
+      <app-dashcard title="Card {{i}}"><div class = "topic">Accounts</div><br>
+        <app-accounts></app-accounts>
+      </app-dashcard>
+    </mat-grid-tile>
+    <!--Charts-->
+    <mat-grid-tile *ngFor="let i of [1]" [colspan]= "2" [rowspan]= "2" [routerLink] = "['/cards']" >
+      <app-dashcard title="Card {{i}}"><div class = "topic">Cards</div>
+      <app-cards></app-cards>
+      </app-dashcard>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let i of [1]" [colspan]= "1" [rowspan]= "3" [routerLink] = "['/expenses']" >
+      <app-dashcard title="Card {{i}}"><div class = "topic">Expenses</div><br>
+      <app-sales-traffic-chart></app-sales-traffic-chart>
+      </app-dashcard>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let i of [1]" [colspan]= "3" [rowspan]= "3" [routerLink] = "['/transaction']" >
+      <app-dashcard title="Card {{i}}"><div class = "topic" style = "margin-top: 1%;">Transaction History</div><br>
+      <app-transactions></app-transactions>
+      </app-dashcard>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-tab>
+
+
+<mat-tab label="Transaction">
+  <br>
+  <h1>Transactions</h1>
+  <app-transactions></app-transactions>
+</mat-tab>
+<mat-tab label="Details">
+  <app-details></app-details>
+</mat-tab>
+<mat-tab label="Operational">
+  <app-operation></app-operation>
+</mat-tab>
+</mat-tab-group>
+ </div>

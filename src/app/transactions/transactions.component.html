@@ -1,0 +1,43 @@
+    <!-- <mat-table [dataSource] = "dataSource">
+      <ng-container matColumnDef="TransactionId">
+        <mat-header-cell *matHeaderCellDef>Transaction Id</mat-header-cell>
+        <mat-cell *matCellDef="let user">{{user.TransactionId}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="AccountName">
+        <mat-header-cell *matHeaderCellDef>Account Name</mat-header-cell>
+        <mat-cell *matCellDef="let user">{{user.AccountName}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Amount">
+        <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+        <mat-cell *mattCellDef="let user">{{user.Amount}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="card">
+        <mat-header-cell *matHeaderCellDef>Card</mat-header-cell>
+        <mat-cell *matCellDef="let user">{{user.card}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table> -->
+
+
+  <table id="customers">
+    <tr>
+      <th>Transaction Id</th>
+      <th>Account Name</th>
+      <th>Amount</th>
+      <th>Card</th>
+    </tr>
+    <tr *ngFor = "let dataItem of dataSource">
+      <td>{{dataItem.TransactionId}}</td>
+      <td>{{dataItem.AccountName}}</td>
+      <td>{{dataItem.Amount | currency}}</td>
+      <td>{{dataItem.card}}</td>
+    </tr>
+    </table>
+
+
+
